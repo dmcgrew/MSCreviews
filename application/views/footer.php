@@ -8,14 +8,16 @@
 			$(function() {
 			    $( "#slider-range-max" ).slider({
 			      range: "max",
-			      min: 1,
-			      max: 10,
-			      value: 2,
+			      min: 0,
+			      max: 5,
+			      value: 0,
 			      slide: function( event, ui ) {
-			        $( "#amount" ).val( ui.value );
+			        $( "#kpa1_rating_value" ).val( ui.value );
+			        $( "#kpa1_rating_text" ).text( ui.value );
 			      }
 			    });
-			    $( "#amount" ).val( $( "#slider-range-max" ).slider( "value" ) );
+			    $( "#kpa1_rating_value" ).val( $( "#slider-range-max" ).slider( "value" ) );
+			    $( "#kpa1_rating_text" ).text( $( "#slider-range-max" ).slider( "value" ) );
 			  });
 		</script>
   </body>

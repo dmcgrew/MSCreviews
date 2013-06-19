@@ -20,7 +20,8 @@
         });
         </script>
         
-        <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+        <link href="<?php echo base_url(); ?>css/redmond/jquery-ui-1.10.3.custom.css" rel="stylesheet" media="screen">                            
+        <link href="<?php echo base_url(); ?>css/style.css" rel="stylesheet" media="screen">
 		
 		
         

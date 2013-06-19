@@ -5,6 +5,8 @@ class Review extends CI_Controller {
 
 	
 	function index(){
+	    $this->load->helper(array('date'));
+	    
         $this->load->model('Review_model');
         
       	$data = array();
@@ -14,6 +16,7 @@ class Review extends CI_Controller {
       	}
       	
       	$this->load->view('review_list', $data);
+    
     }
 	
 	
@@ -33,32 +36,55 @@ class Review extends CI_Controller {
     function create(){
 	  	//$this->load->view('create_review');
 	  	
-	  	$this->load->helper(array('form', 'url'));
+	  	$this->load->helper(array('form', 'url', 'date'));
 	  	$this->load->library('form_validation');
 	  	
-	  	$this->form_validation->set_rules('kpa1', 'KPA 1', 'trim|required');
+	  	$content = array();
 	  	
+	  	$this->load->model('Employees_model');
+        if($query = $this->Employees_model->get_employees()){
+    	  	$content['employees'] = $query;
+      	} 
+      	
+	  	//form validation rules
+	  	$this->form_validation->set_rules('employee', 'Employee', 'trim|required');
+	  	$this->form_validation->set_rules('kpa1', 'KPA 1', 'trim|required');
+	  	$this->form_validation->set_rules('kpa1_rating', 'KPA 1 Rating', 'trim|required|greater_than[0]');
+	  	
+	  	//run validation
 	  	if ($this->form_validation->run() == FALSE){
-			$this->load->view('create_review');
+			$this->load->view('create_review', $content); //reload if validation fails
 		
-		} else {
-			
+		} else { //do this if validation passes..
+			//get values from form and save in $data array
 			$data = array(
+	  			'employee_id' => $this->input->post('employee'),
 	  			'kpa1' => $this->input->post('kpa1'),
-	  			'kpa1_rating' => $this->input->post('kpa1_rating')
+	  			'kpa1_rating' => $this->input->post('kpa1_rating'),
+	  			'date_updated' => date('Y-m-d H:i:s'),
+	  			'date_created' => date('Y-m-d H:i:s'),
+	  			'published' => $this->input->post('draft_pub')
 	  		);
 	  		
-	  		$content = array(
-	  			'alert_type' => 'alert-success',
-	  			'message' => 'The review has been saved!'
-	  		);
-	  		$this->load->model('Review_model');
-			$this->Review_model->add_review($data);
-	  		$this->load->view('create_review', $content);
+	  		if($this->input->post('draft_pub') == 1) {
+	  		   $data['date_published'] = date('Y-m-d H:i:s');
+	  		} else {
+    	  	   $data['date_published'] = 0;
+	  		}
+	  		
+	  		//set messages
+	  		$content['alert_type'] = 'alert-success';
+            $content['message'] = 'The review has been saved!';
+	
+	  		$this->load->model('Review_model'); //load review model
+			$this->Review_model->add_review($data); //pass $data array to review model
+	  		$this->load->view('create_review', $content); //load create review view and pass $content array to it
 		}
 	  	
 	  	
     }
+    
+    
     
     
     function edit(){

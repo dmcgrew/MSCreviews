@@ -5,7 +5,7 @@ class Review_model extends CI_Model {
 	
 	
 	function get_review(){
-	  $query = $this->db->get_where('reviews', array('user_id' => 12));
+	  $query = $this->db->get_where('reviews', array('employee_id' => 1, 'published' => 1));
 	  return $query->result();
     }
     
