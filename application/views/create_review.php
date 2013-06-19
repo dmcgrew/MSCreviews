@@ -1,35 +1,26 @@
-<!DOCTYPE html>
-	<head>
-<meta charset="utf-8" />
-		<title>Create a Review</title>
-		<script type="text/javascript" src="<?php echo base_url(); ?>js/tinymce/tinymce.min.js"></script>
-		<script type="text/javascript">
-        tinymce.init({
-            menubar:false,
-            selector: "textarea",
-            plugins: [
-                "advlist lists link image charmap print preview anchor",
-                "code",
-                "insertdatetime media paste"
-            ],
-            toolbar: " undo redo | bold italic underline | bullist numlist outdent indent"
-        });
-        </script>
-        
-	</head>
+<?php $this->load->view('header'); ?>
+
+	<?php if(isset($message)): ?>
+	<div class="alert <?php echo $alert_type; ?>"><?php echo $message; ?></div>
+	<?php endif; ?>
 	
-	
-	
-	<body>
 	<h1>Create a Review</h1>
+	<?php echo validation_errors('<p>'); ?>
+	
 	<?php echo form_open('review/create'); ?>
 	
-	<label for="kp1">KPA 1</label>
+	<h4>KPA 1</h4>
+	
+	<p>
+  <label for="amount">Minimum number of bedrooms:</label>
+  <input type="text" id="amount" style="border: 0; color: #f6931f; font-weight: bold;" />
+</p>
+<div id="slider-range-max"></div>
+	
 	<textarea name="kpa1" id="kpa1"></textarea>
 	
-	<label for="kp1">KPA 1 Rating</label>
-	<input type="text" name="kpa1_rating" id="kpa1_rating"></input>	
 
 	
-	</body>
-</html>
+	<p><button name="button" id="button" value="true" type="submit" class="btn btn-primary">Save</button></p>
+	
+<?php $this->load->view('footer'); ?>

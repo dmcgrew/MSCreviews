@@ -31,7 +31,33 @@ class Review extends CI_Controller {
     
     
     function create(){
-	  	$this->load->view('create_review');
+	  	//$this->load->view('create_review');
+	  	
+	  	$this->load->helper(array('form', 'url'));
+	  	$this->load->library('form_validation');
+	  	
+	  	$this->form_validation->set_rules('kpa1', 'KPA 1', 'trim|required');
+	  	
+	  	if ($this->form_validation->run() == FALSE){
+			$this->load->view('create_review');
+		
+		} else {
+			
+			$data = array(
+	  			'kpa1' => $this->input->post('kpa1'),
+	  			'kpa1_rating' => $this->input->post('kpa1_rating')
+	  		);
+	  		
+	  		$content = array(
+	  			'alert_type' => 'alert-success',
+	  			'message' => 'The review has been saved!'
+	  		);
+	  		$this->load->model('Review_model');
+			$this->Review_model->add_review($data);
+	  		$this->load->view('create_review', $content);
+		}
+	  	
+	  	
     }
     
     
