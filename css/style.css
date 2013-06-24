@@ -7,12 +7,12 @@
   .kpa_rate label {
     float: left;
     margin-right: 1em; }
-  .kpa_rate #slider-range-max {
+  .kpa_rate .slider {
     float: left;
     width: 8em;
     position: relative;
     top: 0.2em; }
-  .kpa_rate .kpa_rate_text {
+  .kpa_rate .rate_text {
     float: left;
     margin-left: 1em;
     font-weight: bold; }

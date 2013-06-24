@@ -41,15 +41,22 @@ class Review extends CI_Controller {
 	  	
 	  	$content = array();
 	  	
-	  	$this->load->model('Employees_model');
+	  	/*$this->load->model('Employees_model');
         if($query = $this->Employees_model->get_employees()){
     	  	$content['employees'] = $query;
-      	} 
+      	} */
+      	
+      
+      	$content['users'] = $this->ion_auth->users()->result();
       	
 	  	//form validation rules
 	  	$this->form_validation->set_rules('employee', 'Employee', 'trim|required');
+	  	
 	  	$this->form_validation->set_rules('kpa1', 'KPA 1', 'trim|required');
 	  	$this->form_validation->set_rules('kpa1_rating', 'KPA 1 Rating', 'trim|required|greater_than[0]');
+	  	
+	  	$this->form_validation->set_rules('kpa2', 'KPA 2', 'trim|required');
+	  	$this->form_validation->set_rules('kpa2_rating', 'KPA 2 Rating', 'trim|required|greater_than[0]');
 	  	
 	  	//run validation
 	  	if ($this->form_validation->run() == FALSE){
@@ -61,6 +68,8 @@ class Review extends CI_Controller {
 	  			'employee_id' => $this->input->post('employee'),
 	  			'kpa1' => $this->input->post('kpa1'),
 	  			'kpa1_rating' => $this->input->post('kpa1_rating'),
+	  			'kpa2' => $this->input->post('kpa2'),
+	  			'kpa2_rating' => $this->input->post('kpa2_rating'),
 	  			'date_updated' => date('Y-m-d H:i:s'),
 	  			'date_created' => date('Y-m-d H:i:s'),
 	  			'published' => $this->input->post('draft_pub')

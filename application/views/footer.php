@@ -6,18 +6,19 @@
 		
 		<script>
 			$(function() {
-			    $( "#slider-range-max" ).slider({
+			    $( ".slider" ).slider({
 			      range: "max",
 			      min: 0,
 			      max: 5,
-			      value: 0,
-			      slide: function( event, ui ) {
-			        $( "#kpa1_rating_value" ).val( ui.value );
-			        $( "#kpa1_rating_text" ).text( ui.value );
+			      value: $("input", this).val(),
+			      slide: function( event, ui ) {			        
+			        //get the id of this slider
+					var id = $(this).attr("id");
+			        //select the input box that has the same id as the slider within it and set it's value to the current slider value. 
+					$("span[class*=" + id + "]").text(ui.value);
+					$("input[class*=" + id + "]").val(ui.value);
 			      }
 			    });
-			    $( "#kpa1_rating_value" ).val( $( "#slider-range-max" ).slider( "value" ) );
-			    $( "#kpa1_rating_text" ).text( $( "#slider-range-max" ).slider( "value" ) );
 			  });
 		</script>
   </body>
