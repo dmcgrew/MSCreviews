@@ -58,6 +58,7 @@ $lang['create_user_subheading']                        = 'Please enter the users
 $lang['create_user_fname_label']                       = 'First Name:';
 $lang['create_user_lname_label']                       = 'Last Name:';
 $lang['create_user_company_label']                     = 'Company Name:';
+$lang['create_user_username_label']                    = 'Username:';
 $lang['create_user_email_label']                       = 'Email:';
 $lang['create_user_phone_label']                       = 'Phone:';
 $lang['create_user_password_label']                    = 'Password:';

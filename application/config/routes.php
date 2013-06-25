@@ -38,9 +38,12 @@
 |
 */
 
-$route['default_controller'] = "login";
+$route['default_controller'] = "auth";
 $route['404_override'] = '';
 
+//user login/logout routes
+$route['login'] = 'auth/login';
+$route['test'] = 'welcome/index';
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

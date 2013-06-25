@@ -10,7 +10,9 @@
 			      range: "max",
 			      min: 0,
 			      max: 5,
-			      value: $("input", this).val(),
+			      create: function () {
+                      $(this).slider( "option", "value", $(this).next().val() );
+                  },
 			      slide: function( event, ui ) {			        
 			        //get the id of this slider
 					var id = $(this).attr("id");

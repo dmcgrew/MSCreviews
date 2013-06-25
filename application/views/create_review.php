@@ -49,9 +49,8 @@
 	    <div class="kpa_rate kpa_rate1">
     	    <label for="kpa1_rating_value">Rating:</label>
             
-            <div id="1" class="slider">
-            	<input type="hidden" class="kpa1_rating_value" name="kpa1_rating" value="<?php echo set_value('kpa1_rating', 0); ?>" />
-            </div>
+            <div id="1" class="slider"></div>
+            <input type="hidden" class="kpa1_rating_value" name="kpa1_rating" value="<?php echo set_value('kpa1_rating', 0); ?>" />
             <span class="kpa1_rating_text rate_text"><?php echo set_value('kpa1_rating', 0); ?></span>
 	    </div>
 	</div>
@@ -64,9 +63,8 @@
 	    <div class="kpa_rate kpa_rate2">
     	    <label for="kpa2_rating_value">Rating:</label>
             
-            <div id="2" class="slider">
-            	<input type="hidden" class="kpa2_rating_value" name="kpa2_rating" value="<?php echo set_value('kpa2_rating', 0); ?>" />
-            </div>
+            <div id="2" class="slider"></div>
+            <input type="hidden" class="kpa2_rating_value" name="kpa2_rating" value="<?php echo set_value('kpa2_rating', 0); ?>" />
             <span class="kpa2_rating_text rate_text"><?php echo set_value('kpa2_rating', 0); ?></span>
 	    </div>
 	</div>
