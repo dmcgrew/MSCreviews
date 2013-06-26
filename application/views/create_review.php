@@ -25,7 +25,7 @@
 	echo form_open('review/create', $form_attributes); 
 	?>
 	
-	<label for="employee">Employee</label>
+	<label for="employee">Who is this review for?</label>
 	<select name="employee" id="employee">
 	    <option value=""></option>
         

@@ -2,10 +2,15 @@
 
 class Review_model extends CI_Model {
 
-	
+	function list_reviews(){
+      $user = $this->ion_auth->user()->row();
+	  $query = $this->db->get_where('reviews', array('published' => 1, 'employee_id' => $user->id));
+	  return $query->result();
+    }
 	
 	function get_review(){
-	  $query = $this->db->get_where('reviews', array('employee_id' => 1, 'published' => 1));
+      $user = $this->ion_auth->user()->row();
+	  $query = $this->db->get_where('reviews', array('id' => $this->uri->segment(3), 'published' => 1, 'employee_id' => $user->id));
 	  return $query->result();
     }
     

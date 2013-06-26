@@ -32,3 +32,5 @@
   </head>
   <body>
   <div class="container">
+  
+<?php $this->load->view('nav'); ?>

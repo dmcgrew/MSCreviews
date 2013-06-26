@@ -4,14 +4,14 @@ class Review extends CI_Controller {
 
 
 	
-	function index(){
+	function your_reviews(){
 	    $this->load->helper(array('date'));
 	    
         $this->load->model('Review_model');
         
       	$data = array();
     
-      	if($query = $this->Review_model->get_review()){
+      	if($query = $this->Review_model->list_reviews()){
     	  	$data['records'] = $query;
       	}
       	
@@ -20,7 +20,7 @@ class Review extends CI_Controller {
     }
 	
 	
-	function single_review(){
+	function view(){
         $this->load->model('Review_model');
         
       	$data = array();
@@ -29,7 +29,7 @@ class Review extends CI_Controller {
     	  	$data['records'] = $query;
       	}
       	
-      	$this->load->view('review', $data);
+      	$this->load->view('single_review', $data);
     }
     
 
