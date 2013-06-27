@@ -5,6 +5,8 @@ class Review extends CI_Controller {
 
 	
 	function your_reviews(){
+		if(!$this->ion_auth->logged_in()){redirect('login');}
+		
 	    $this->load->helper(array('date'));
 	    
         $this->load->model('Review_model');
@@ -21,6 +23,8 @@ class Review extends CI_Controller {
 	
 	
 	function view(){
+		if(!$this->ion_auth->logged_in()){redirect('login');}
+		
         $this->load->model('Review_model');
         
       	$data = array();
@@ -35,6 +39,8 @@ class Review extends CI_Controller {
 
     
     function create(){
+    	if(!$this->ion_auth->logged_in()){redirect('login');}
+    
         $groups = array('admin', 'reviewer');
         if (!$this->ion_auth->in_group($groups)) {
             $this->session->set_flashdata('message', 'You do not have permission to create reviews.');
@@ -100,6 +106,8 @@ class Review extends CI_Controller {
     
     
     function edit(){
+      if(!$this->ion_auth->logged_in()){redirect('login');}
+      
 	  $data = array(
 	  	'title' => $this->input->post('title'),
 	  	'content' => $this->input->post('content')

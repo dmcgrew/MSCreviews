@@ -28,6 +28,10 @@ if ($this->ion_auth->logged_in())
         <ul class="nav">
             <li><a href="/review/your_reviews">Your Reviews</a></li>
             <li><a href="/star">Give Star</a></li>
+            <?php
+            $group = array('reviewer', 'admin');
+			if ($this->ion_auth->in_group($group)):
+            ?>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   Admin
@@ -38,6 +42,7 @@ if ($this->ion_auth->logged_in())
                   <li><a href="#">Edit Reviews</a></li>
                 </ul>
             </li>
+            <?php endif; ?>
             <?php if($logged_in): ?><li><a href="/logout">Logout</a></li><?php endif; ?>
             <?php if(!$logged_in): ?><li><a href="/login">Login</a></li><?php endif; ?>
         </ul>

@@ -30,8 +30,8 @@ $lang['login_submit_btn']      = 'Login';
 $lang['login_forgot_password'] = 'Forgot your password?';
 
 // Index
-$lang['index_heading']           = 'Users';
-$lang['index_subheading']        = 'Below is a list of the users.';
+$lang['index_heading']           = 'Employees';
+$lang['index_subheading']        = 'Below is a list of the employees.';
 $lang['index_fname_th']          = 'First Name';
 $lang['index_lname_th']          = 'Last Name';
 $lang['index_email_th']          = 'Email';
@@ -40,12 +40,12 @@ $lang['index_status_th']         = 'Status';
 $lang['index_action_th']         = 'Action';
 $lang['index_active_link']       = 'Active';
 $lang['index_inactive_link']     = 'Inactive';
-$lang['index_create_user_link']  = 'Create a new user';
+$lang['index_create_user_link']  = 'Create a new employee';
 $lang['index_create_group_link'] = 'Create a new group';
 
 // Deactivate User
-$lang['deactivate_heading']                  = 'Deactivate User';
-$lang['deactivate_subheading']               = 'Are you sure you want to deactivate the user \'%s\'';
+$lang['deactivate_heading']                  = 'Deactivate Employee';
+$lang['deactivate_subheading']               = 'Are you sure you want to deactivate the employee \'%s\'';
 $lang['deactivate_confirm_y_label']          = 'Yes:';
 $lang['deactivate_confirm_n_label']          = 'No:';
 $lang['deactivate_submit_btn']               = 'Submit';
@@ -53,8 +53,8 @@ $lang['deactivate_validation_confirm_label'] = 'confirmation';
 $lang['deactivate_validation_user_id_label'] = 'user ID';
 
 // Create User
-$lang['create_user_heading']                           = 'Create User';
-$lang['create_user_subheading']                        = 'Please enter the users information below.';
+$lang['create_user_heading']                           = 'Create Employee';
+$lang['create_user_subheading']                        = 'Please enter the employee\'s information below.';
 $lang['create_user_fname_label']                       = 'First Name:';
 $lang['create_user_lname_label']                       = 'Last Name:';
 $lang['create_user_company_label']                     = 'Company Name:';
@@ -63,7 +63,7 @@ $lang['create_user_email_label']                       = 'Email:';
 $lang['create_user_phone_label']                       = 'Phone:';
 $lang['create_user_password_label']                    = 'Password:';
 $lang['create_user_password_confirm_label']            = 'Confirm Password:';
-$lang['create_user_submit_btn']                        = 'Create User';
+$lang['create_user_submit_btn']                        = 'Create Employee';
 $lang['create_user_validation_fname_label']            = 'First Name';
 $lang['create_user_validation_lname_label']            = 'Last Name';
 $lang['create_user_validation_email_label']            = 'Email Address';
@@ -75,8 +75,8 @@ $lang['create_user_validation_password_label']         = 'Password';
 $lang['create_user_validation_password_confirm_label'] = 'Password Confirmation';
 
 // Edit User
-$lang['edit_user_heading']                           = 'Edit User';
-$lang['edit_user_subheading']                        = 'Please enter the users information below.';
+$lang['edit_user_heading']                           = 'Edit Employee';
+$lang['edit_user_subheading']                        = 'Please enter the employee\'s information below.';
 $lang['edit_user_fname_label']                       = 'First Name:';
 $lang['edit_user_lname_label']                       = 'Last Name:';
 $lang['edit_user_company_label']                     = 'Company Name:';
@@ -85,7 +85,7 @@ $lang['edit_user_phone_label']                       = 'Phone:';
 $lang['edit_user_password_label']                    = 'Password: (if changing password)';
 $lang['edit_user_password_confirm_label']            = 'Confirm Password: (if changing password)';
 $lang['edit_user_groups_heading']                    = 'Member of groups';
-$lang['edit_user_submit_btn']                        = 'Save User';
+$lang['edit_user_submit_btn']                        = 'Save Employee';
 $lang['edit_user_validation_fname_label']            = 'First Name';
 $lang['edit_user_validation_lname_label']            = 'Last Name';
 $lang['edit_user_validation_email_label']            = 'Email Address';

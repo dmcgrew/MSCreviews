@@ -25,3 +25,6 @@
 
 .label, .badge {
   color: #fff; }
+
+table form {
+  margin-bottom: 0; }

@@ -12,7 +12,7 @@
       	<?php echo form_input($email);?>
       </p>
 
-      <p><?php echo form_submit('submit', lang('forgot_password_submit_btn'));?></p>
+      <p><button name="button" id="button" value="true" type="submit" class="btn btn-primary"><?php echo lang('forgot_password_submit_btn'); ?></button></p>
 
 <?php echo form_close();?>
 

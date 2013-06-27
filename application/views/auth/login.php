@@ -7,23 +7,24 @@
 
 <?php echo form_open("auth/login");?>
 
-  <p>
+  
     <?php echo lang('login_identity_label', 'identity');?>
     <?php echo form_input($identity);?>
-  </p>
 
-  <p>
+
+ 
     <?php echo lang('login_password_label', 'password');?>
     <?php echo form_input($password);?>
-  </p>
+  
 
-  <p>
-    <?php echo lang('login_remember_label', 'remember');?>
+
+    <label for="remember" class="checkbox">
     <?php echo form_checkbox('remember', '1', FALSE, 'id="remember"');?>
-  </p>
+    <?php echo lang('login_remember_label');?>
+    </label>
 
 
-  <p><?php echo form_submit('submit', lang('login_submit_btn'));?></p>
+  <p><button name="button" id="button" value="true" type="submit" class="btn btn-primary"><?php echo lang('login_submit_btn'); ?></button></p>
 
 <?php echo form_close();?>
 

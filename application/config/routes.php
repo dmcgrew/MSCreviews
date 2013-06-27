@@ -38,7 +38,7 @@
 |
 */
 
-$route['default_controller'] = "welcome";
+$route['default_controller'] = "review/your_reviews";
 $route['404_override'] = '';
 
 //user login/logout routes

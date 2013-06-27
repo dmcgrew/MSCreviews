@@ -17,7 +17,7 @@
             <?php echo form_input($description);?>
       </p>
 
-      <p><?php echo form_submit('submit', lang('create_group_submit_btn'));?></p>
+      <p><button name="button" id="button" value="true" type="submit" class="btn btn-primary"><?php echo lang('create_group_submit_btn'); ?></button></p>
 
 <?php echo form_close();?>
 
