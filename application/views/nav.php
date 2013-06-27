@@ -5,10 +5,13 @@ if ($this->ion_auth->logged_in())
 		} else {
     		$logged_in = false;
 		}
+if ($this->uri->segment_array()){		
+$url_segment = $this->uri->segment_array(); //get array of url segment strings
+}
 ?>
 
 
-<div class="navbar">
+<div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
  
@@ -20,31 +23,22 @@ if ($this->ion_auth->logged_in())
       </a>
  
       <!-- Be sure to leave the brand out there if you want it shown -->
-      <a class="brand" href="#">MSC Employee Reviews</a>
+      <a class="brand" href="#"><img src="/img/logo.svg" /></a>
  
       <!-- Everything you want hidden at 940px or less, place within here -->
       <div class="nav-collapse collapse">
         <!-- .nav, .navbar-search, .navbar-form, etc -->
         <ul class="nav">
-            <li><a href="/review/your_reviews">Your Reviews</a></li>
-            <li><a href="/star">Give Star</a></li>
+            <li class="<?php if($url_segment[1] == 'your_reviews'){echo "active";} ?>"><a href="/your_reviews">Your Reviews</a></li>
+            <li class="<?php if($url_segment[1] == 'star'){echo "active";} ?>"><a href="/star">Give Star</a></li>
             <?php
             $group = array('reviewer', 'admin');
 			if ($this->ion_auth->in_group($group)):
             ?>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  Admin
-                  <b class="caret"></b>
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a href="/review/create">Create a Review</a></li>
-                  <li><a href="#">Edit Reviews</a></li>
-                </ul>
-            </li>
+            <li class="<?php if($url_segment[1] == 'admin'){echo "active";} ?>"><a href="/admin">Admin</a></li>
             <?php endif; ?>
             <?php if($logged_in): ?><li><a href="/logout">Logout</a></li><?php endif; ?>
-            <?php if(!$logged_in): ?><li><a href="/login">Login</a></li><?php endif; ?>
+            
         </ul>
       </div>
  

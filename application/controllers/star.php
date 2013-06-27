@@ -3,6 +3,8 @@
 class Star extends CI_Controller {
 
     function index(){
+        if(!$this->ion_auth->logged_in()){redirect('login');}
+        
         $this->load->helper(array('form', 'url', 'date'));
         $this->load->library('form_validation');
         

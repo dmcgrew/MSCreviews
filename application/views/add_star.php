@@ -27,7 +27,7 @@
 	
         <?php foreach($users as $row): ?>
             <option value="<?php echo $row->id; ?>" <?php echo set_select('employee', $row->id); ?>><?php echo $row->first_name . ' ' . $row->last_name; ?></option>
-		    <p></p>
+		
        		
             <?php endforeach; ?>
             <?php endif; ?>
@@ -37,9 +37,9 @@
     <textarea name="star" id="star"><?php echo set_value('star'); ?></textarea>
 
     
-    <p><label><input type="checkbox" name="email" value="email" checked="checked" /> Send an email to the star recipient.</label></p>
+    <label class="checkbox"><input type="checkbox" name="email" value="email" checked="checked" /> Send an email to the star recipient.</label>
     
-    <p><button name="button" id="button" value="true" type="submit" class="btn btn-primary">Save</button></p>
+    <button name="button" id="button" value="true" type="submit" class="btn btn-primary">Save</button>
     
 <?php echo form_close(); ?>
 

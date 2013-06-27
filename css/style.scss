@@ -1,3 +1,12 @@
+.wf-loading  {visibility: hidden;}
+
+body {padding-top: 90px; font-family: "freight-sans-pro", Helvetica, sans-serif; background-image: url(/img/debut_light.png);
+    @media (max-width: 980px) {padding-top: 0px;}
+}
+
+
+.container {max-width: 800px;}
+
 .label_group label {float:left;}
 
 .kpa_rate {float:right; width:auto;
@@ -6,10 +15,18 @@
     .rate_text {float:left; margin-left:1em; font-weight: bold;}
 }
 
-.mce-tinymce {clear:both;}
+.mce-tinymce {clear:both; margin-bottom:10px !important; max-width: 800px;}
 
 .alert p:last-child {margin-bottom: 0;}
 
 .label, .badge {color:#fff;}
 
 table form {margin-bottom: 0;}
+
+a.brand img {width:150px;}
+
+.navbar .nav>li>a {padding:21px 15px 23px;
+    @media (max-width: 980px) {padding:11px 15px 10px;}
+}
+
+table.employees td {vertical-align: middle;}

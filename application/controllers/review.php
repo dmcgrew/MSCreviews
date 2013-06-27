@@ -13,6 +13,23 @@ class Review extends CI_Controller {
         
       	$data = array();
     
+      	if($query = $this->Review_model->your_reviews()){
+    	  	$data['records'] = $query;
+      	}
+      	
+      	$this->load->view('review_list', $data);
+    
+    }
+	
+	function list_reviews(){
+		if(!$this->ion_auth->logged_in()){redirect('login');}
+		
+	    $this->load->helper(array('date'));
+	    
+        $this->load->model('Review_model');
+        
+      	$data = array();
+    
       	if($query = $this->Review_model->list_reviews()){
     	  	$data['records'] = $query;
       	}
