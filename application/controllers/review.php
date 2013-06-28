@@ -72,9 +72,7 @@ class Review extends CI_Controller {
           
           	$content['users'] = $this->ion_auth->users(2)->result();
           	
-    	  	//form validation rules
-    	  	$this->form_validation->set_rules('employee', 'Employee', 'trim|required');
-    	  	
+    	  	//form validation rules    	  	
     	  	$this->form_validation->set_rules('kpa1', 'KPA 1', 'trim|required');
     	  	$this->form_validation->set_rules('kpa1_rating', 'KPA 1 Rating', 'trim|required|greater_than[0]');
     	  	
@@ -100,8 +98,10 @@ class Review extends CI_Controller {
     	  		
     	  		if($this->input->post('draft_pub') == 1) {
     	  		   $data['date_published'] = date('Y-m-d H:i:s');
+    	  		   $this->session->set_flashdata('success', 'The review has been published!');
     	  		} else {
         	  	   $data['date_published'] = 0;
+        	  	   $this->session->set_flashdata('success', 'The review has been saved as a draft!');
     	  		}
     	  		
     	  		//set messages
@@ -110,7 +110,9 @@ class Review extends CI_Controller {
     	
     	  		$this->load->model('Review_model'); //load review model
     			$this->Review_model->add_review($data); //pass $data array to review model
-    	  		$this->load->view('create_review', $content); //load create review view and pass $content array to it
+    	  		//$this->load->view('review_list', $content); //load create review view and pass $content array to it
+    	  		
+                redirect('/admin');
     		}
     		
     		

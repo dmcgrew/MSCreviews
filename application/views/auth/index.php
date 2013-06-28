@@ -1,10 +1,22 @@
 <?php $this->load->view('header'); ?>
 
 <div class="container">
+
+<?php if($this->session->flashdata('success')): ?>
+    	<div class="alert alert-success">
+    	    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    	    <?php echo $this->session->flashdata('success'); ?>
+    	</div>
+<?php endif; ?>
+	
+
 <h1><?php echo lang('index_heading');?></h1>
 <p><?php echo lang('index_subheading');?></p>
 
 <div id="infoMessage"><?php echo $message;?></div>
+
+	
+
 
 <table class="table table-striped table-hover table-condensed employees">
 	<thead>
@@ -28,7 +40,7 @@
 				    <span class="caret"></span>
 				  </a>
 				  <ul class="dropdown-menu">
-				    <li><a href="/review/create">New Review</a></li>
+				    <li><a href="/review/create/<?php echo $user->id ?>">New Review</a></li>
 				    <li><a href="/admin/list_reviews/<?php echo $user->id ?>">List Reviews</a></li>
 				   
 				   <?php

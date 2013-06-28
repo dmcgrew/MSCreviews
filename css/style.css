@@ -4,10 +4,15 @@
 body {
   padding-top: 90px;
   font-family: "freight-sans-pro", Helvetica, sans-serif;
-  background-image: url(/img/debut_light.png); }
+  background-image: url(/img/debut_light.png);
+  font-weight: 400; }
   @media (max-width: 980px) {
     body {
       padding-top: 0px; } }
+
+h1, h2, h3, h4 {
+  font-family: "freight-sans-pro", Helvetica, sans-serif;
+  font-weight: 700; }
 
 .container {
   max-width: 800px; }
@@ -29,7 +34,11 @@ body {
   .kpa_rate .rate_text {
     float: left;
     margin-left: 1em;
-    font-weight: bold; }
+    font-weight: bold;
+    width: 15px; }
+
+.ui-slider-handle {
+  outline: none !important; }
 
 .mce-tinymce {
   clear: both;

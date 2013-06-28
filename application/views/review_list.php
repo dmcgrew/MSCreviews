@@ -5,7 +5,7 @@
 	<?php  if(isset($records)): foreach($records as $row): ?>
         
         <?php 
-            $time = strtotime($row->date_published); 
+            $time = strtotime($row->date_created); 
             $date = date('F j, Y', $time);
             
         ?>

@@ -22,26 +22,13 @@
 	
 	<?php 
 	$form_attributes = array('class' => 'create_review');
-	echo form_open('review/create', $form_attributes); 
+	echo form_open('review/create/'.$this->uri->segment(3), $form_attributes); 
 	?>
 	
-	<label for="employee">Who is this review for?</label>
-	<select name="employee" id="employee">
-	    <option value=""></option>
-        
-	
-        <?php  if(isset($users)): ?>
-	
-        <?php foreach($users as $row): ?>
-            <option value="<?php echo $row->id; ?>" <?php echo set_select('employee', $row->id); ?>><?php echo $row->first_name . ' ' . $row->last_name; ?></option>
-		    <p></p>
-       		
-            <?php endforeach; ?>
-            <?php endif; ?>
-        </select>   
-        
+	<input type="hidden" name="employee" value="<?php echo $this->uri->segment(3); ?>" />
+	        
      
-     <h2>Key Performance Areas (KPAs)</h2> 
+     <h3>Key Performance Areas (KPAs)</h3> 
      <p>KPAs are the core skills required of your job position and role within MarketSpace. The more successful you are within these performance areas, the more successful MarketSpace will be. These items can also be found in your job description. Improvement and excellence within these areas will increase your rating and pay raise, as well as provide you direction in your career path.</p>  
         
 	<div class="label_group">

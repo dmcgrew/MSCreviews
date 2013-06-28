@@ -30,7 +30,7 @@ $url_segment = $this->uri->segment_array(); //get array of url segment strings
         <!-- .nav, .navbar-search, .navbar-form, etc -->
         <ul class="nav">
             <li class="<?php if($url_segment[1] == 'your_reviews'){echo "active";} ?>"><a href="/your_reviews">Your Reviews</a></li>
-            <li class="<?php if($url_segment[1] == 'star'){echo "active";} ?>"><a href="/star">Give Star</a></li>
+            <li class="<?php if($url_segment[1] == 'star'){echo "active";} ?>"><a href="/star">Give a Star</a></li>
             <?php
             $group = array('reviewer', 'admin');
 			if ($this->ion_auth->in_group($group)):
